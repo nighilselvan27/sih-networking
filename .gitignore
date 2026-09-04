@@ -1,0 +1,33 @@
+# Python virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data files (PCAP, binetflow, large CSVs, binaries)
+data/
+*.pcap
+*.binetflow
+*.csv
+*.exe
+
+# Model binary artifacts & large files (> 100MB / non-code output)
+models/*.joblib
+models/*.h5
+models/*.pkl
+models/*.pt
+models/*.onnx
+models/*.bin
+models/ctu13_multiscenario_predictions.csv
+
+# System / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
