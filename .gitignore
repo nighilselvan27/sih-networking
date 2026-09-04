@@ -1,32 +1,24 @@
-# Python virtual environment
+# Virtual Environment
 venv/
-env/
 .venv/
-ENV/
+env/
 
-# Python cache & bytecode
+# Python Cache & Artifacts
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
+.pytest_cache/
 
-# Data files (PCAP, binetflow, large CSVs, binaries)
-data/
-*.pcap
-*.binetflow
-*.csv
-*.exe
+# Large Datasets & Traffic Captures (>100MB, up to 70GB PCAP/Binetflow/CSV)
+data/*/*.pcap
+data/*/*.binetflow
+data/*/*.csv
+data/*/*.exe
 
-# Model binary artifacts & large files (> 100MB / non-code output)
+# Large Binary Model Checkpoints (>100MB limit on GitHub)
 models/*.joblib
-models/*.h5
-models/*.pkl
-models/*.pt
-models/*.onnx
-models/*.bin
-models/ctu13_multiscenario_predictions.csv
 
-# System / IDE files
+# Operating System & IDE Files
 .DS_Store
 Thumbs.db
 .vscode/
