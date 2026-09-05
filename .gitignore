@@ -23,3 +23,7 @@ models/*.joblib
 Thumbs.db
 .vscode/
 .idea/
+
+# Archives
+*.zip
+data/*.zip
