@@ -1,0 +1,2 @@
+Model,Threshold,Rows,Accuracy,Precision,Recall,F1,ROC_AUC,PR_AUC,TrueNegatives,FalsePositives,FalseNegatives,TruePositives,AttackDetectionRate,FalsePositiveRate
+XGBoost,0.4,80000,0.3831625,0.9887145609688962,0.1796,0.3039817204756061,0.9470059004166668,0.9758582541923586,19877,123,49224,10776,0.1796,0.00615

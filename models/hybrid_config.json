@@ -1,0 +1,47 @@
+{
+  "training_scenarios": "1-10",
+  "testing_scenarios": "11-13",
+  "xgboost_model": "D:\\sih-networking\\CTU13-IDS\\models\\ctu13_multiscenario_xgboost.json",
+  "isolation_forest_model": "D:\\sih-networking\\CTU13-IDS\\models\\ctu13_isolation_forest_fixed.joblib",
+  "isolation_forest_scaler": "D:\\sih-networking\\CTU13-IDS\\models\\ctu13_isolation_forest_scaler.joblib",
+  "isolation_forest_features": "D:\\sih-networking\\CTU13-IDS\\models\\ctu13_isolation_forest_features_fixed.json",
+  "xgboost_threshold": 0.2,
+  "uncertainty_low": 0.05,
+  "uncertainty_high": 0.35,
+  "if_calibration_percentile": 99.0,
+  "if_anomaly_quantile": 0.99,
+  "if_threshold": 0.1306154165918563,
+  "if_strong_anomaly_gate": 0.1306154165918563,
+  "hybrid_mode": "gated",
+  "random_seed": 42,
+  "test_rows": 547490,
+  "xgboost_metrics": {
+    "Accuracy": 0.9640413523534677,
+    "Precision": 0.9734977019887462,
+    "Recall": 0.543058417597163,
+    "F1": 0.6971929554718141,
+    "ROC_AUC": 0.9831515836396725,
+    "PR_AUC": 0.9065787991510225
+  },
+  "isolation_metrics": {
+    "Accuracy": 0.9225611426692725,
+    "Precision": 0.0,
+    "Recall": 0.0,
+    "F1": 0.0,
+    "ROC_AUC": 0.31693298200770087,
+    "PR_AUC": 0.10097561593313058
+  },
+  "hybrid_metrics": {
+    "Accuracy": 0.9640413523534677,
+    "Precision": 0.9734977019887462,
+    "Recall": 0.543058417597163,
+    "F1": 0.6971929554718141,
+    "ROC_AUC": 0.9831515836396725,
+    "PR_AUC": 0.9065787991510225
+  },
+  "improvement": {
+    "recall": 0.0,
+    "precision": 0.0,
+    "f1": 0.0
+  }
+}

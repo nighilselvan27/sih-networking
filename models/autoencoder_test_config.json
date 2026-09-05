@@ -1,0 +1,41 @@
+{
+  "model": "CTU13_Autoencoder",
+  "training_scenarios": "1-10",
+  "testing_scenarios": [
+    11,
+    12,
+    13
+  ],
+  "random_seed": 42,
+  "threshold": 0.25541964173316956,
+  "feature_count": 257,
+  "numeric_feature_count": 30,
+  "categorical_feature_count": 3,
+  "prediction_batch_size": 2048,
+  "test_rows": 547490,
+  "metrics": {
+    "Accuracy": 0.9229264461451351,
+    "Precision": 0.4852500796431985,
+    "Recall": 0.1824890976182489,
+    "F1": 0.26523185150359574,
+    "ROC_AUC": 0.6835333868972712,
+    "PR_AUC": 0.26058085916447515,
+    "FPR": 0.015974106090684045,
+    "Detection_Rate": 0.1824890976182489,
+    "TN": 497677,
+    "FP": 8079,
+    "FN": 34118,
+    "TP": 7616
+  },
+  "artifacts": {
+    "model": "D:\\sih-networking\\CTU13-IDS\\models\\ctu13_autoencoder.keras",
+    "scaler": "D:\\sih-networking\\CTU13-IDS\\models\\autoencoder_scaler.joblib",
+    "feature_schema": "D:\\sih-networking\\CTU13-IDS\\models\\autoencoder_features.json",
+    "training_config": "D:\\sih-networking\\CTU13-IDS\\models\\autoencoder_config.json"
+  },
+  "outputs": {
+    "benchmark": "D:\\sih-networking\\CTU13-IDS\\models\\autoencoder_benchmark.csv",
+    "per_scenario": "D:\\sih-networking\\CTU13-IDS\\models\\autoencoder_benchmark_per_scenario.csv",
+    "predictions": "D:\\sih-networking\\CTU13-IDS\\models\\autoencoder_predictions.csv"
+  }
+}

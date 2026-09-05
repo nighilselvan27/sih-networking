@@ -1,0 +1,59 @@
+{
+  "project": "CTU-13 Hybrid IDS",
+  "mode": "Streaming",
+  "testing_scenarios": [
+    11,
+    12,
+    13
+  ],
+  "chunk_size": 5000,
+  "total_rows": 547490,
+  "benign": 524536,
+  "suspicious": 1548,
+  "malicious": 21406,
+  "xgboost_alerts": 23281,
+  "autoencoder_alerts": 15695,
+  "models": {
+    "xgboost": "D:\\sih-networking\\CTU13-IDS\\models\\ctu13_multiscenario_xgboost.json",
+    "autoencoder": "D:\\sih-networking\\CTU13-IDS\\models\\ctu13_autoencoder.keras",
+    "scaler": "D:\\sih-networking\\CTU13-IDS\\models\\autoencoder_scaler.joblib",
+    "schema": "D:\\sih-networking\\CTU13-IDS\\models\\autoencoder_features.json"
+  },
+  "configuration": {
+    "xgboost_threshold": 0.2,
+    "autoencoder_threshold": 0.25541964,
+    "xgboost_weight": 0.9,
+    "autoencoder_weight": 0.1,
+    "uncertainty_low": 0.05,
+    "uncertainty_high": 0.35
+  },
+  "scenario_results": [
+    {
+      "scenario": 11,
+      "rows": 32855,
+      "benign": 24692,
+      "suspicious": 6,
+      "malicious": 8157,
+      "xgboost_alerts": 8175,
+      "autoencoder_alerts": 7912
+    },
+    {
+      "scenario": 12,
+      "rows": 92010,
+      "benign": 91947,
+      "suspicious": 43,
+      "malicious": 20,
+      "xgboost_alerts": 129,
+      "autoencoder_alerts": 682
+    },
+    {
+      "scenario": 13,
+      "rows": 422625,
+      "benign": 407897,
+      "suspicious": 1499,
+      "malicious": 13229,
+      "xgboost_alerts": 14977,
+      "autoencoder_alerts": 7101
+    }
+  ]
+}

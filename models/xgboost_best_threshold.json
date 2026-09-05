@@ -1,0 +1,13 @@
+{
+  "model": "XGBoost",
+  "threshold": 0.4,
+  "selection_metric": "F1",
+  "train_scenarios": "1-10",
+  "test_scenarios": "11-13",
+  "accuracy": 0.9643153299603646,
+  "precision": 0.9841643763905248,
+  "recall": 0.5405664446254852,
+  "f1": 0.6978362744946409,
+  "roc_auc": 0.9831515836396725,
+  "pr_auc": 0.9065787991510225
+}

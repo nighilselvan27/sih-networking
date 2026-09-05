@@ -1,0 +1,17 @@
+{
+  "recommended_threshold": 0.2,
+  "recommended_precision": 0.9874537227478404,
+  "recommended_recall": 0.24005,
+  "recommended_f1": 0.3862118896307618,
+  "recommended_false_positive_rate": 0.00915,
+  "recommended_attack_detection_rate": 0.24005,
+  "best_f1_threshold": 0.05,
+  "best_f1": 0.5313272224859706,
+  "best_recall_threshold_fpr_1pct": 0.2,
+  "best_recall_fpr_1pct": 0.24005,
+  "best_recall_threshold_fpr_0_5pct": 0.55,
+  "best_recall_fpr_0_5pct": 0.14736666666666667,
+  "high_precision_threshold": 0.05,
+  "high_precision": 0.9853266513160865,
+  "high_precision_recall": 0.36373333333333335
+}
