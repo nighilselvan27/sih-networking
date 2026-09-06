@@ -1,0 +1,186 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans text-base antialiased;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Numbers must line up in every table and metric. */
+  .tabular,
+  table,
+  input[type='number'] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 1px;
+    border-radius: 3px;
+  }
+
+  /* Never remove focus indication; only replace it where the component
+     draws its own. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  ::selection {
+    background: var(--accent-weak);
+    color: var(--text);
+  }
+}
+
+@layer components {
+  /* --- Type roles ------------------------------------------------- */
+
+  .label-field {
+    @apply text-2xs uppercase tracking-[0.06em] text-text-3;
+  }
+
+  .mono {
+    @apply font-mono text-xs;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- Controls ---------------------------------------------------- */
+
+  .btn {
+    @apply inline-flex items-center gap-1.5 rounded border border-border
+           bg-surface px-2.5 py-1.5 text-xs font-medium text-text
+           transition-colors hover:bg-surface-2
+           disabled:cursor-not-allowed disabled:opacity-45
+           disabled:hover:bg-surface;
+  }
+
+  .btn-primary {
+    @apply border-accent bg-accent text-white hover:opacity-90
+           hover:bg-accent;
+  }
+
+  .btn-quiet {
+    @apply border-transparent bg-transparent text-text-2
+           hover:bg-surface-2 hover:text-text;
+  }
+
+  .field {
+    @apply h-8 rounded border border-border bg-surface px-2.5 text-xs
+           text-text placeholder:text-text-3
+           focus:border-accent focus:outline-none;
+  }
+
+  /* Segmented control: the one place a pill radius is allowed. */
+  .segment {
+    @apply inline-flex items-center rounded border border-border
+           bg-surface p-0.5;
+  }
+
+  .segment-item {
+    @apply rounded-sm px-2 py-1 text-2xs font-medium text-text-2
+           transition-colors hover:text-text;
+  }
+
+  .segment-item[aria-pressed='true'] {
+    @apply bg-surface-3 text-text;
+  }
+
+  /* --- Structure ---------------------------------------------------- */
+
+  /* Sections are separated by a rule, not boxed in a card. */
+  .section {
+    @apply border-t border-border pt-6;
+  }
+
+  .panel {
+    @apply rounded-md border border-border bg-surface;
+  }
+
+  /* --- Tables -------------------------------------------------------- */
+
+  .tbl {
+    @apply w-full border-collapse text-xs;
+  }
+
+  .tbl thead th {
+    @apply sticky top-0 z-10 whitespace-nowrap border-b border-border
+           bg-surface px-3 py-2 text-left text-2xs font-medium
+           uppercase tracking-[0.05em] text-text-3;
+  }
+
+  .tbl tbody td {
+    @apply whitespace-nowrap border-b border-border px-3 py-1.5
+           align-middle;
+  }
+
+  .tbl tbody tr {
+    @apply transition-colors;
+  }
+
+  .tbl tbody tr:hover {
+    @apply bg-surface-2;
+  }
+
+  .tbl tbody tr[aria-selected='true'] {
+    @apply bg-accent-weak;
+  }
+
+  .num {
+    @apply text-right font-mono;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- Scrollbars ---------------------------------------------------- */
+
+  .scroll-x {
+    @apply overflow-x-auto;
+    scrollbar-width: thin;
+  }
+}
+
+/* Respect the operator's motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Thin, unobtrusive scrollbars in the dense areas. */
+.scroll-x::-webkit-scrollbar,
+.scroll-y::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scroll-x::-webkit-scrollbar-thumb,
+.scroll-y::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: 6px;
+}
+
+.scroll-x::-webkit-scrollbar-track,
+.scroll-y::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -27,3 +27,8 @@ Thumbs.db
 # Archives
 *.zip
 data/*.zip
+
+# Frontend build artifacts and dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo

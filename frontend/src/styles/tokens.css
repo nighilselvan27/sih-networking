@@ -1,0 +1,133 @@
+/*
+ * Design tokens.
+ *
+ * Colour carries state, never decoration. There are exactly four semantic
+ * colours (danger / warning / success / accent) and they are used only to
+ * say what something is, not to make the page look busier.
+ *
+ * The light palette is the source of truth. The dark palette redefines the
+ * same tokens; no component ever hard-codes a colour.
+ */
+
+:root {
+  /* Surfaces */
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --surface-3: #f4f4f2;
+
+  /* Text */
+  --text: #171717;
+  --text-2: #737373;
+  --text-3: #a3a3a3;
+
+  /* Lines */
+  --border: #e5e5e5;
+  --border-strong: #d4d4d4;
+
+  /* State */
+  --accent: #2563eb;
+  --accent-weak: #eff4ff;
+  --ok: #16a34a;
+  --ok-weak: #f0fdf4;
+  --warn: #d97706;
+  --warn-weak: #fffbeb;
+  --danger: #dc2626;
+  --danger-weak: #fef2f2;
+
+  /* Chart series. Kept deliberately few and low-saturation. */
+  --series-1: #2563eb;
+  --series-2: #737373;
+  --series-3: #dc2626;
+  --grid: #f0f0ef;
+
+  /* The only shadow in the system. Used by the drawer and popovers. */
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.08);
+
+  /* Overlay scrim. Defined as a complete colour: Tailwind cannot apply an
+     alpha modifier to a hex custom property, so bg-text/10 silently
+     computes to fully transparent. */
+  --scrim: rgb(23 23 23 / 0.16);
+
+  --focus: #2563eb;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'],
+:root[data-theme='system'] {
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0a0a0a;
+    --surface: #121212;
+    --surface-2: #171717;
+    --surface-3: #1c1c1c;
+
+    --text: #ededed;
+    --text-2: #8f8f8f;
+    --text-3: #6b6b6b;
+
+    --border: #262626;
+    --border-strong: #333333;
+
+    --accent: #3b82f6;
+    --accent-weak: #12203a;
+    --ok: #22c55e;
+    --ok-weak: #0e2417;
+    --warn: #eab308;
+    --warn-weak: #241d0b;
+    --danger: #ef4444;
+    --danger-weak: #2a1414;
+
+    --series-1: #3b82f6;
+    --series-2: #8f8f8f;
+    --series-3: #ef4444;
+    --grid: #1f1f1f;
+
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.5);
+    --scrim: rgb(0 0 0 / 0.55);
+
+    --focus: #3b82f6;
+
+    color-scheme: dark;
+  }
+}
+
+/* Explicit choice overrides the system preference in both directions. */
+:root[data-theme='dark'] {
+  --bg: #0a0a0a;
+  --surface: #121212;
+  --surface-2: #171717;
+  --surface-3: #1c1c1c;
+
+  --text: #ededed;
+  --text-2: #8f8f8f;
+  --text-3: #6b6b6b;
+
+  --border: #262626;
+  --border-strong: #333333;
+
+  --accent: #3b82f6;
+  --accent-weak: #12203a;
+  --ok: #22c55e;
+  --ok-weak: #0e2417;
+  --warn: #eab308;
+  --warn-weak: #241d0b;
+  --danger: #ef4444;
+  --danger-weak: #2a1414;
+
+  --series-1: #3b82f6;
+  --series-2: #8f8f8f;
+  --series-3: #ef4444;
+  --grid: #1f1f1f;
+
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.5);
+  --scrim: rgb(0 0 0 / 0.55);
+
+  --focus: #3b82f6;
+
+  color-scheme: dark;
+}
