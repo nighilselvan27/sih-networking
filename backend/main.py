@@ -1,3 +1,5 @@
+import os
+os.environ.setdefault("IDS_DEMO_CONTROLS", "1")
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional

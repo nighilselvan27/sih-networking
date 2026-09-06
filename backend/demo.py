@@ -44,7 +44,7 @@ LOOPBACK_HOSTS = {"127.0.0.1", "::1", "localhost"}
 
 # Hard ceiling regardless of preset. test_traffic.py caps --duration at
 # 300s; this process additionally kills anything still alive after this.
-MAX_RUN_SECONDS = 45
+MAX_RUN_SECONDS = 180
 
 
 # ============================================================
@@ -56,31 +56,31 @@ MAX_RUN_SECONDS = 45
 
 PRESETS: Dict[str, Dict[str, Any]] = {
     "benign-udp": {
-        "label": "Benign UDP",
+        "label": "Benign UDP (30s)",
         "description": "Steady low-rate UDP to a local port.",
         "expectation": "Normal traffic. Expected to score benign.",
         "args": [
             "--type", "benign-udp",
-            "--duration", "10",
+            "--duration", "30",
             "--rate", "200",
             "--port", "9999",
         ],
     },
     "udp-flood": {
-        "label": "UDP flood",
+        "label": "UDP flood (30s)",
         "description": "High-rate UDP toward a single local port.",
         "expectation": (
             "High packet and byte rate. The verdict comes from the model."
         ),
         "args": [
             "--type", "udp",
-            "--duration", "10",
+            "--duration", "30",
             "--rate", "3000",
             "--port", "9999",
         ],
     },
     "tcp-syn": {
-        "label": "TCP SYN",
+        "label": "TCP SYN (30s)",
         "description": (
             "Real SYNs toward a closed local port. No source-IP spoofing."
         ),
@@ -89,30 +89,30 @@ PRESETS: Dict[str, Dict[str, Any]] = {
         ),
         "args": [
             "--type", "syn",
-            "--duration", "10",
+            "--duration", "30",
             "--rate", "1500",
             "--port", "9998",
         ],
     },
     "burst": {
-        "label": "Multi-socket burst",
+        "label": "Multi-socket burst (30s)",
         "description": "High-rate benign traffic across four local ports.",
         "expectation": "Elevated rate across several flows.",
         "args": [
             "--type", "burst",
-            "--duration", "10",
+            "--duration", "30",
             "--rate", "2000",
         ],
     },
     "benign-tcp": {
-        "label": "Benign TCP",
+        "label": "Benign TCP (500 pkts)",
         "description": (
             "Complete TCP conversation against a local echo listener."
         ),
         "expectation": "Normal traffic. Expected to score benign.",
         "args": [
             "--type", "benign-tcp",
-            "--count", "200",
+            "--count", "500",
             "--size", "512",
         ],
     },
